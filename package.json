@@ -1,0 +1,41 @@
+{
+  "name": "enhanced-tape",
+  "version": "0.1.0",
+  "description": "A set of extensions built on top of tape testing library",
+  "main": "dist/enhanced-tape",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "./test.sh test",
+    "lint": "eslint {src,test}/**/*{js,jsx}",
+    "test-publish": "npm test && npm run-script build && npm publish",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexeyds/enhanced-tape.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexeyds/enhanced-tape/issues"
+  },
+  "homepage": "https://github.com/alexeyds/enhanced-tape",
+  "keywords": [],
+  "author": "Alexey D",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "enhanced-tape-runner": "^1.1.2",
+    "eslint": "^6.6.0",
+    "rollup": "^1.25.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  },
+  "peerDependencies": {
+    "tape": "~4.0"
+  }
+}

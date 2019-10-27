@@ -1,6 +1,6 @@
 {
   "name": "enhanced-tape",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of extensions built on top of tape testing library",
   "main": "dist/enhanced-tape",
   "files": [
@@ -36,6 +36,6 @@
     "tape": "^4.11.0"
   },
   "peerDependencies": {
-    "tape": "~4.0"
+    "tape": "*"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "enhanced-tape",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A set of extensions built on top of tape testing library",
   "main": "dist/enhanced-tape",
   "files": [
@@ -26,13 +26,13 @@
   "author": "Alexey D",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "babel-plugin-module-resolver": "^3.2.0",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-plugin-module-resolver": "^4.0.0",
     "enhanced-tape-runner": "^1.1.2",
-    "eslint": "^6.6.0",
-    "rollup": "^1.25.2",
-    "rollup-plugin-babel": "^4.3.3",
+    "eslint": "^6.8.0",
+    "rollup": "^2.3.5",
+    "rollup-plugin-babel": "^4.4.0",
     "tap-spec-dot": "^0.1.2",
     "tape": "^4.11.0"
   },

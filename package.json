@@ -11,7 +11,7 @@
     "test": "./test.sh test",
     "lint": "eslint {src,test}/**/*{js,jsx}",
     "test-dist": "",
-    "prepare": "npm test && npm run-script build && npm run-script test-dist",
+    "preublish-only": "npm test && npm run-script build && npm run-script test-dist",
     "build": "rollup -c"
   },
   "repository": {
@@ -26,14 +26,14 @@
   "author": "Alexey D",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "enhanced-tape-runner": "^1.1.2",
-    "eslint": "^6.8.0",
-    "rollup": "^2.3.5",
+    "enhanced-tape-runner": "^1.1.4",
+    "eslint": "^7.6.0",
+    "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
-    "tap-spec-dot": "^0.1.2",
+    "tap-spec-dot": "^0.1.4",
     "tape": "^4.11.0"
   },
   "peerDependencies": {

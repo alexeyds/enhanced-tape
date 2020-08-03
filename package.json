@@ -1,6 +1,6 @@
 {
   "name": "enhanced-tape",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A set of extensions built on top of tape testing library",
   "main": "dist/enhanced-tape",
   "files": [
@@ -11,7 +11,7 @@
     "test": "./test.sh test",
     "lint": "eslint {src,test}/**/*{js,jsx}",
     "test-dist": "",
-    "preublish-only": "npm test && npm run-script build && npm run-script test-dist",
+    "prepublishOnly": "npm test && npm run-script build && npm run-script test-dist",
     "build": "rollup -c"
   },
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "enhanced-tape",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A set of extensions built on top of tape testing library",
   "main": "dist/enhanced-tape",
   "files": [

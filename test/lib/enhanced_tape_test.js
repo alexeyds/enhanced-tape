@@ -15,10 +15,19 @@ test("tape", function(t) {
       t.end();
     });
 
-    t.test("extends test name", async function(t) {
+    t.test("extends test name", function(t) {
       t.match(t.name, /tape error handling/);
     
       t.end();
+    });
+
+    t.test("automatically ends tests", function(t) {
+      t.pass();
+    });
+
+    t.test("automatically ends async tests", async function(t) {
+      await new Promise(resolve => resolve());
+      t.pass();
     });
   });
 });

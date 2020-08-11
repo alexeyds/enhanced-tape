@@ -15,6 +15,8 @@ test("tryTest()", function(t) {
     assertTestFails(t, () => {
       tryTest(t, () => { throw new Error; });
     }, /Unhandled exception/);
+  
+    t.end();
   });
 
   t.test("works if test function returns nothing", async function(t) {
@@ -31,5 +33,7 @@ test("tryTest()", function(t) {
     assertTestFails(t, () => {
       tryTest(t, returnFakePromiseRejection);
     }, /Unhandled rejection/);
+  
+    t.end();
   });
 });

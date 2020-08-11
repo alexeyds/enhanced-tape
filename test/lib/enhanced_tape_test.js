@@ -14,5 +14,11 @@ test("tape", function(t) {
     
       t.end();
     });
+
+    t.test("extends test name", async function(t) {
+      t.match(t.name, /tape error handling/);
+    
+      t.end();
+    });
   });
 });

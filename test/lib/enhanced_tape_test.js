@@ -103,10 +103,22 @@ test("tape", function(t) {
 
     t.test("passes existing assigns to setup function", function(t) {
       t.setup(assigns => {
-        t.same(assigns, {foo: "bar"});
+        return { bar: assigns.foo };
       });
-    
-      t.end();
+
+      t.test("", function(t, assigns) {
+        t.same(assigns, {foo: "bar", bar: "bar"});
+      
+        t.end();
+      });
+    });
+
+    t.test("passes assigns all the way down", function(t) {
+      t.test("", function(t, assigns) {
+        t.same(assigns, {foo: "bar"});
+      
+        t.end();
+      });
     });
   });
 });

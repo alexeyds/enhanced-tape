@@ -66,4 +66,47 @@ test("tape", function(t) {
       t.pass();
     });
   });
+
+  t.test("setup()", function(t, assigns) {
+    t.same(assigns, {}, "passes empty object as assigns by default");
+
+    t.setup(() => {
+      return { foo: "bar" };
+    });
+
+    t.test("passes assigns to each test", function(t, assigns) {
+      t.same(assigns, {foo: "bar"});
+  
+      t.end();
+    });
+
+    t.test("re-initializes assigns for each test", function(t, assigns) {
+      assigns.test = 1;
+      t.test("", function(t, assigns) {
+        t.equal(assigns.test, undefined);
+      
+        t.end();
+      });
+    });
+
+    t.test("merges subsequent assigns together", function(t) {
+      t.setup(() => {
+        return { bar: "baz" };
+      });
+
+      t.test("", function(t, assigns) {
+        t.same(assigns, {foo: "bar", bar: "baz"});
+      
+        t.end();
+      });
+    });
+
+    t.test("passes existing assigns to setup function", function(t) {
+      t.setup(assigns => {
+        t.same(assigns, {foo: "bar"});
+      });
+    
+      t.end();
+    });
+  });
 });

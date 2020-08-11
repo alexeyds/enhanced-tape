@@ -6,12 +6,28 @@ test.beforeEach(() => {
   beforeEachCalledTimes += 1;
 });
 
+let afterEachCalledTimes = 0;
+test.afterEach(() => {
+  afterEachCalledTimes += 1;
+});
+
+
 test("tape", function(t) {
   t.test("beforeEach()", function(t) {
     t.equal(beforeEachCalledTimes, 2);
 
     t.test("runs function before each test", function(t) {
       t.equal(beforeEachCalledTimes, 3);
+  
+      t.end();
+    });
+  });
+
+  t.test("afterEach()", function(t) {
+    t.equal(afterEachCalledTimes, 3);
+
+    t.test("runs function before each test", function(t) {
+      t.equal(afterEachCalledTimes, 4);
   
       t.end();
     });
@@ -31,18 +47,23 @@ test("tape", function(t) {
     });
   });
 
-  t.test("extends test name", function(t) {
-    t.match(t.name, /tape/);
-  
-    t.end();
+  t.test("naming", function(t) {
+    t.test("extends test name", function(t) {
+      t.match(t.name, /tape naming/);
+    
+      t.end();
+    });
   });
 
-  t.test("automatically ends tests", function(t) {
-    t.pass();
-  });
 
-  t.test("automatically ends async tests", async function(t) {
-    await new Promise(resolve => resolve());
-    t.pass();
+  t.test("test ending", function(t) {
+    t.test("automatically ends tests", function(t) {
+      t.pass();
+    });
+
+    t.test("automatically ends async tests", async function(t) {
+      await new Promise(resolve => resolve());
+      t.pass();
+    });
   });
 });
